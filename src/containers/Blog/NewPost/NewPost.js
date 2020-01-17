@@ -12,6 +12,7 @@ class NewPost extends Component {
   }
 
   componentDidMount () {
+    // this.props.history.replace('/posts')
     console.log(this.props)
   }
 
@@ -24,7 +25,8 @@ class NewPost extends Component {
     axios.post('https://jsonplaceholder.typicode.com/posts', data)
       .then(response => {
         console.log(response)
-        this.setState({submitted: true})
+        // this.setState({submitted: true})
+        this.props.history.push('/posts')
       })
   }
 
